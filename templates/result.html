@@ -1,0 +1,35 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Privacy Protection Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Face Privacy Protection Results</h1>
+
+        <div class="results">
+            <div class="image-container">
+                <h2>Original Image</h2>
+                <img src="/{{ original_image }}" alt="Original Image">
+            </div>
+
+            <div class="image-container">
+                <h2>Processed Image</h2>
+                <img src="/{{ processed_image }}" alt="Processed Image">
+            </div>
+        </div>
+
+        <div class="actions">
+            <a href="/{{ processed_image }}" download class="btn">Download Processed Image</a>
+            <a href="{{ url_for('index') }}" class="btn">Process Another Image</a>
+        </div>
+    </div>
+</body>
+
+</html>
